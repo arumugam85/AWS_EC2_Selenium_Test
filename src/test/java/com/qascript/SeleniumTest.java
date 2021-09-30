@@ -15,7 +15,7 @@ public class SeleniumTest {
 	public void firstTest() throws InterruptedException {
 		WebDriver driver;
 		ChromeOptions options = new ChromeOptions();
-		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
 		options.addArguments("--headless");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
