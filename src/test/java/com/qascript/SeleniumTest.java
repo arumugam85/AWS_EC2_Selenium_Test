@@ -13,28 +13,16 @@ public class SeleniumTest {
 
 	@Test
 	public void firstTest() throws InterruptedException {
-		WebDriver driver;
-		ChromeOptions options = new ChromeOptions();
-		System.setProperty("webdriver.chrome.driver","/usr/bin/google-chrome");
-		options.addArguments("--headless");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		driver = new ChromeDriver(options);
-		System.out.println("Launch Chrome Browser");
-		driver.manage().window().maximize();
-		System.out.println("************Launch OHRM Application**************");
-		driver.get("https://opensource-demo.orangehrmlive.com/");
-		Thread.sleep(3000);
-		System.out.println("************Enter User name************");
-		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
-		System.out.println("**********Enter password*********");
-		driver.findElement(By.id("txtPassword")).sendKeys("admin123");
-		driver.findElement(By.id("btnLogin")).click();
-		System.out.println("************Submitted****************");
-		Thread.sleep(4000);
-		System.out.println("*********Title of the page is: " + driver.getTitle());
-		Assert.assertEquals(driver.getTitle(), "OrangeHRM");
-		driver.quit();
+	WebDriver driver;
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        options.addArguments("disable-gpu");
+        driver = new ChromeDriver(options);
+        driver.get("https://www.google.com");
+        System.out.println("Title of the page is: " + driver.getTitle());
+        Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
+	driver.quit();
 		
 	}
 
