@@ -14,19 +14,12 @@ public class SeleniumTest {
 	@Test
 	public void firstTest() throws InterruptedException {
 		WebDriver driver;
-		// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		ChromeOptions options = new ChromeOptions();
 		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 		options.addArguments("--headless");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		driver = new ChromeDriver(options);
-// 		ChromeOptions options = new ChromeOptions();
-// 		WebDriverManager.chromedriver().setup();
-// 		driver = new ChromeDriver(options);
-// 		options.addArguments("headless");
-// 		options.addArguments("disable-gpu");
-// 		driver = new ChromeDriver(options);
 		System.out.println("Launch Chrome Browser");
 		driver.manage().window().maximize();
 		System.out.println("************Launch OHRM Application**************");
